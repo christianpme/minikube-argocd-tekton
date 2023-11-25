@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'hello-world-pipeline'
+spec:
+  destination:
+    name: 'minikube'
+    server: https://kubernetes.default.svc 
+    namespace: default
+  source:
+    path: 'pipelines/hello-world-pipeline/chart'
+    repoURL: 'https://github.com/christianpme/minikube-argocd-tekton.git'
+    targetRevision: HEAD
+  project: 'default'
