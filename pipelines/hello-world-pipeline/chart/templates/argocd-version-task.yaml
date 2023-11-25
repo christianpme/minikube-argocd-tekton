@@ -8,9 +8,9 @@ spec:
       image: quay.io/argoproj/argocd
       script: |
         #!/bin/sh
-        argocd login $(kubectl get service argocd-server -n argocd --output=jsonpath='{.status.loadBalancer.ingress[0].hostname}') \
+        argocd login http://localhost:8080 \
           --username admin \
-          --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo) \
+          --password KHaoBjUSt9TmLJ2K \
           --insecure
 
         argocd version
