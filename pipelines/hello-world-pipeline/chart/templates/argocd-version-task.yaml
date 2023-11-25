@@ -8,7 +8,7 @@ spec:
       image: quay.io/argoproj/argocd
       script: |
         #!/bin/sh
-        argocd login http://localhost:8080 \
+        argocd login localhost:8080 \
           --username admin \
           --password KHaoBjUSt9TmLJ2K \
           --insecure
