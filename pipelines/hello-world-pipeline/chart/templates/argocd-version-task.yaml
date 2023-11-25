@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: argocd-version
+spec:
+  steps:
+    - name: echo
+      image: quay.io/argoproj/argocd
+      script: |
+        #!/bin/sh
+        argocd version
