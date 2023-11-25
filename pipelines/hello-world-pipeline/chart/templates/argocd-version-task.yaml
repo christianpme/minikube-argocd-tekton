@@ -11,6 +11,6 @@ spec:
         argocd login --insecure \
           --username admin \
           --password KHaoBjUSt9TmLJ2K \
-          --grpc-web 'localhost:8080'
+          --grpc-web 'https://localhost:8080'
 
         argocd version
